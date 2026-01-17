@@ -1,0 +1,56 @@
+/* --- DESIGN GLOBAL & BACKGROUND --- */
+body, html {
+    margin: 0;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    height: 100%;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.page { display: none; min-height: 100vh; padding: 20px; }
+.active { display: block; }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+.fade-in { animation: fadeIn 1.5s ease; }
+.float-anim { animation: float 4s infinite ease-in-out; border-radius: 15px; width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+/* --- PAGE D'ACCUEIL --- */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 50px; background: rgba(0,0,0,0.3); }
+.logo { font-size: 28px; font-weight: bold; color: #1877f2; }
+.hero { text-align: center; margin-top: 40px; }
+.image-container { display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+
+/* --- INSCRIPTION (STYLE FACEBOOK) --- */
+.fb-container { display: flex; max-width: 900px; margin: 60px auto; background: #f0f2f5; color: #1c1e21; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.fb-left { flex: 1; padding-right: 30px; display: flex; flex-direction: column; justify-content: center; }
+.fb-left h1 { color: #1877f2; font-size: 45px; margin-bottom: 10px; }
+.fb-right { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.fb-right input { width: 90%; padding: 14px; margin-bottom: 15px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; }
+.btn-signup { width: 100%; background: #42b72a; color: white; border: none; padding: 12px; font-size: 18px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* --- PAGE VIDÉO & NAVIGATION --- */
+.video-header { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.user-profile-nav { display: flex; align-items: center; gap: 12px; }
+.nav-avatar { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #1877f2; }
+.btn-logout { background: transparent; border: 1px solid #ff4b4b; color: #ff4b4b; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; transition: 0.3s; }
+.btn-logout:hover { background: #ff4b4b; color: white; }
+
+.search-bar { display: flex; gap: 10px; width: 50%; }
+.search-bar input { flex: 1; padding: 12px 20px; border-radius: 25px; border: none; outline: none; }
+.btn-share { background: #1877f2; color: white; border: none; padding: 0 20px; border-radius: 25px; cursor: pointer; font-weight: bold; }
+
+/* --- GRILLE DE VIDÉOS --- */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; padding: 30px; }
+.video-card { background: rgba(255, 255, 255, 0.05); border-radius: 12px; overflow: hidden; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+.video-card:hover { transform: translateY(-5px); }
+.video-info { padding: 15px; }
+.posted-by { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+.mini-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+.btn-download { width: 100%; background: #ff0000; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }

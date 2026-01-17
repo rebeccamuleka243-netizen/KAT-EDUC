@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="KAT.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStream - Apprentissage Vidéo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="home" class="page active">
+        <nav>
+            <h1 class="logo">EduStream</h1>
+            <button onclick="showPage('signup')">S'inscrire</button>
+        </nav>
+        <div class="hero">
+            <h2 class="fade-in">Apprenez partout, tout le temps.</h2>
+            <p class="slide-up">Une plateforme collaborative pour partager des cours YouTube et TikTok.</p>
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80" alt="Vision 1" class="float-anim">
+                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=80" alt="Vision 2" class="float-anim-delay">
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="page">
+        <div class="fb-container">
+            <div class="fb-left">
+                <h1>EduStream</h1>
+                <p>Partagez vos connaissances avec vos camarades de filière.</p>
+            </div>
+            <div class="fb-right">
+                <form id="signupForm">
+                    <input type="text" id="userName" placeholder="Nom complet" required>
+                    <input type="text" id="userFiliere" placeholder="Votre Filière (ex: Informatique)" required>
+                    <label for="userPhoto">Photo de profil :</label>
+                    <input type="file" id="userPhoto" accept="image/*">
+                    <button type="submit" class="btn-signup">Créer un compte</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="videoPage" class="page">
+        <header class="video-header">
+            <div id="userInfo"></div>
+            <div class="search-bar">
+                <input type="text" id="videoLink" placeholder="Collez un lien YouTube ou TikTok ici...">
+                <button onclick="addVideo()">Partager</button>
+            </div>
+        </header>
+        <div id="videoGrid" class="video-grid">
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
